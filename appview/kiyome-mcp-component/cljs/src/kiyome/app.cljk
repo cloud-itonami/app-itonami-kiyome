@@ -14,7 +14,7 @@
   this migration itself changed:
 
   - `:app/relative-path` now names this file
-    (`appview/kiyome-mcp-component/cljs/src/kiyome/app.cljs`), not the
+    (`appview/kiyome-mcp-component/cljs/src/kiyome/app.cljk`), not the
     deleted Svelte one.
   - `:app/xrpc?` is now false. This migration's wrangler.jsonc drops
     `main` (see that file's header comment): the only Worker source left
@@ -59,7 +59,7 @@
    :app/routes []
    :app/vars []
    :app/xrpc? false
-   :app/relative-path "appview/kiyome-mcp-component/cljs/src/kiyome/app.cljs"})
+   :app/relative-path "appview/kiyome-mcp-component/cljs/src/kiyome/app.cljk"})
 
 (rf/reg-event-db
  :initialize-db
