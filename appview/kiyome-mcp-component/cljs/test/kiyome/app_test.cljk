@@ -19,7 +19,7 @@
     (is (= [] @(rf/subscribe [:app/routes])))
     (is (= [] @(rf/subscribe [:app/vars])))
     (is (false? @(rf/subscribe [:app/xrpc?])))
-    (is (= "appview/kiyome-mcp-component/cljs/src/kiyome/app.cljs"
+    (is (= "appview/kiyome-mcp-component/cljs/src/kiyome/app.cljk"
            @(rf/subscribe [:app/relative-path])))))
 
 (deftest routes-sub-reflects-db
