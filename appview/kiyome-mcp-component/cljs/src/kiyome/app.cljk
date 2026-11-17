@@ -1,5 +1,5 @@
 (ns kiyome.app
-  "com-etzhayyim-app-kiyome appview — reagent + re-frame, view built from
+  "app-itonami-kiyome appview — reagent + re-frame, view built from
   jp-go-dds (デジタル庁デザインシステム) hiccup.
 
   Faithful port of the previous SvelteKit scaffold's status page
@@ -36,10 +36,10 @@
 
     (require '[jp-go-dds.page :as page] [\"fs\" :as fs])
     (fs/writeFileSync \"public/index.html\"
-      (page/->page {:title \"etzhayyim-project-kiyome\" :lang \"ja\"
+      (page/->page {:title \"itonami-project-kiyome\" :lang \"ja\"
                     :description \"kiyome — Purification & Compliance Clearing Platform. BPMN-driven clearance processing, audit logging, compliance verification, and purification workflows. (reagent + re-frame + jp-go-dds)\"
                     :css (fs/readFileSync \"dds.css\" \"utf8\")}
-                   [:div {:id \"app\"} \"etzhayyim-project-kiyome loading…\"]
+                   [:div {:id \"app\"} \"itonami-project-kiyome loading…\"]
                    [:script {:src \"js/app.js\"}]))"
   (:require [reagent.dom :as rdom]
             [re-frame.core :as rf]
@@ -52,7 +52,7 @@
 
 (def default-db
   {:app/title "Kiyome Mcp Component"
-   :app/project "etzhayyim-project-kiyome"
+   :app/project "itonami-project-kiyome"
    :app/name "kiyome-mcp-component"
    :app/kind "appview"
    :app/route-count 0
