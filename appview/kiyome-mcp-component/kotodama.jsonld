@@ -1,6 +1,6 @@
 {
-  "@context": "https://etzhayyim.com/ns/kotodama/v1",
-  "@id": "did:web:kiyome.etzhayyim.com",
+  "@context": "https://itonami.cloud/ns/kotodama/v1",
+  "@id": "did:web:kiyome.itonami.cloud",
   "name": "kiyome",
   "nanoid": "j6x1brhm",
   "project": "kiyome",
@@ -15,7 +15,7 @@
     "avatar": "✨",
     "isBot": true,
     "agentType": "autonomous",
-    "operator": "etzhayyim",
+    "operator": "itonami",
     "capabilities": ["submitClearance", "listClearances", "approveClearance", "rejectClearance", "createAuditLog", "listAuditLogs", "getComplianceStatus", "runPurification"],
     "protocols": ["xrpc", "mcp"]
   },
@@ -26,8 +26,8 @@
   "triggers": {
     "subscribeRepos": {
       "collections": [
-        "com.etzhayyim.apps.kiyome.clearance",
-        "com.etzhayyim.apps.kiyome.auditLog"
+        "cloud.itonami.apps.kiyome.clearance",
+        "cloud.itonami.apps.kiyome.auditLog"
       ]
     }
   }

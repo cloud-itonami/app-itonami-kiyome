@@ -13,7 +13,7 @@
     (is (= app/default-db @rf-db/app-db))
     (is (= "Kiyome Mcp Component" @(rf/subscribe [:app/title])))
     (is (= "kiyome-mcp-component" @(rf/subscribe [:app/name])))
-    (is (= "etzhayyim-project-kiyome" @(rf/subscribe [:app/project])))
+    (is (= "itonami-project-kiyome" @(rf/subscribe [:app/project])))
     (is (= "appview" @(rf/subscribe [:app/kind])))
     (is (= 0 @(rf/subscribe [:app/route-count])))
     (is (= [] @(rf/subscribe [:app/routes])))

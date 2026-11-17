@@ -8,7 +8,7 @@
 import { json, type RequestEvent } from '@sveltejs/kit';
 import type { RequestHandler } from './$types';
 
-const DEFAULT_MCP_ROUTER_URL = 'https://mcp.etzhayyim.com/xrpc/com.etzhayyim.mcp.message';
+const DEFAULT_MCP_ROUTER_URL = 'https://mcp.itonami.cloud/xrpc/cloud.itonami.mcp.message';
 
 type Env = Record<string, unknown> & { AGENTGATEWAY_MCP_ROUTER_URL?: string; MCP_ROUTER_URL?: string };
 
@@ -36,8 +36,8 @@ export const POST: RequestHandler = async (event) => {
   const headers = new Headers(event.request.headers);
   headers.delete('host');
   headers.set('content-type', 'application/json');
-  headers.set('x-etzhayyim-bff', 'sveltekit-edge-bff');
-  headers.set('x-etzhayyim-xrpc-method', nsid);
+  headers.set('x-itonami-bff', 'sveltekit-edge-bff');
+  headers.set('x-itonami-xrpc-method', nsid);
   const upstream = await fetch(mcpRouterUrl(envOf(event)), {
     method: 'POST',
     headers,

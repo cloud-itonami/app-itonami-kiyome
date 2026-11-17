@@ -1,4 +1,4 @@
-// kiyome.etzhayyim.com — Purification & Compliance Clearing Platform
+// kiyome.itonami.cloud — Purification & Compliance Clearing Platform
 // Thin-edge dispatcher: business logic in AgentGateway MCP + pod-side LangServer.
 // 8 methods: submitClearance / listClearances / approveClearance / rejectClearance /
 //            createAuditLog / listAuditLogs / getComplianceStatus / runPurification
@@ -11,8 +11,8 @@ interface Env {
 }
 interface ExportedHandler<E> { fetch(req: Request, env: E): Promise<Response>; }
 
-const NSID_PREFIX = "com.etzhayyim.apps.kiyome.";
-const ACTOR_DID = "did:web:kiyome.etzhayyim.com";
+const NSID_PREFIX = "cloud.itonami.apps.kiyome.";
+const ACTOR_DID = "did:web:kiyome.itonami.cloud";
 
 export default {
   async fetch(req: Request, env: Env): Promise<Response> {
@@ -23,7 +23,7 @@ export default {
         actor: ACTOR_DID,
         nanoid: env.APP_NANOID ?? "j6x1brhm",
         execution: "edge-proxy+agentgateway-mcp+langserver",
-        bpmn: "60-apps/etzhayyim-project-kiyome/bpmn",
+        bpmn: "60-apps/itonami-project-kiyome/bpmn",
         methods: [
           "submitClearance", "listClearances", "approveClearance", "rejectClearance",
           "createAuditLog", "listAuditLogs", "getComplianceStatus", "runPurification",
@@ -56,7 +56,7 @@ async function bodyWithQuery(req: Request, url: URL): Promise<Record<string, unk
 }
 
 async function proxyToDispatcher(env: Env, nsid: string, body: Record<string, unknown>): Promise<Response> {
-  const dispatcherUrl = env.DISPATCHER_URL ?? "https://dispatcher.etzhayyim.com";
+  const dispatcherUrl = env.DISPATCHER_URL ?? "https://dispatcher.itonami.cloud";
   const secret = typeof env.DISPATCHER_INTERNAL_SECRET === "object"
     ? await env.DISPATCHER_INTERNAL_SECRET.get()
     : (env.DISPATCHER_INTERNAL_SECRET ?? "");
